@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_meta_data_meta_data",
+  "info": {
+    "displayName": "MetaData",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
