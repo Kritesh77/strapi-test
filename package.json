@@ -1,11 +1,13 @@
-{"scripts": {
-    "frontend": "npm run dev --prefix ../frontend/",
-    "backend": "npm run dev --prefix ../backend/",
+{
+  "scripts": {
     "clear": "cd frontend && rm -rf .next && rm -rf cache",
-    "setup:frontend": "cd frontend && npm run",
-    "setup:backend": "cd backend && npm run",
-    "setup": "npm run install && npm run setup:frontend && npm run setup:backend",
-    "dev": "concurrently \"cd frontend && npm run dev\" \"cd backend && npm run develop\""
+    "build:frontend": "cd frontend && npm i && npm run build && npm run start",
+    "build:backend": "cd backend && npm i && npm run build && npm run start",
+    "dev:frontend": "cd frontend && npm i && npm run dev",
+    "dev:backend": "cd backend && npm i && npm run develop",
+    "setup:build": "npm i && npm run build:backend && npm run build:frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "concurrently \"npm run build:backend\" \"npm run build:frontend\""
   },
   "dependencies": {
     "concurrently": "^8.2.2"
